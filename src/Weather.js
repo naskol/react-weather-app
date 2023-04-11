@@ -27,13 +27,14 @@ export default function Weather() {
                     placeholder="Type a city..."
                     className="form-control"
                     autoComplete="off"
+                    autoFocus="on"
                   />
                 </div>
                 <div className="col-3">
                   <input
                     type="submit"
                     value="Submit"
-                    className="btn btn-primary"
+                    className="btn btn-primary w-100"
                   />
                 </div>
               </div>
@@ -47,7 +48,7 @@ export default function Weather() {
               </div>
               <div className="row">
                 <div className="d-flex weather-temperature">
-                  <div className="col-1"></div>
+                  <div className="col-2"></div>
                   <div className="col-4">
                     <strong>{weatherData.temperature}</strong>
                     <span class="units">
@@ -86,7 +87,7 @@ export default function Weather() {
               rel="noreferrer"
             >
               Open-source code
-            </a>
+            </a>{" "}
             by Anastasiia Balan
           </small>
         </div>

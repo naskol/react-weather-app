@@ -1,6 +1,8 @@
 body {
   font-family: "Hanken Grotesk", sans-serif;
   color: #132238;
+  margin: 30px auto;
+  max-width: 500px;
 }
 h1 {
   font-size: 35px;
@@ -99,6 +101,7 @@ hr {
 
 .developer-information {
   text-align: center;
+  font-size: 12px;
 }
 
 .forecast-img {
