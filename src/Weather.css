@@ -1,0 +1,114 @@
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  color: #132238;
+}
+h1 {
+  font-size: 35px;
+  color: #132238;
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  margin-top: 1px;
+  margin-bottom: 10px;
+}
+
+.weather-app {
+  background: #c4c1e0;
+  border: 1mm solid #c4c1e0;
+  border-radius: 10px;
+}
+
+.overmain {
+  margin-bottom: 10px;
+}
+.weather-temperature img {
+  height: 64px;
+  width: 64px;
+}
+
+.weather-temperature strong {
+  font-size: 40px;
+}
+
+.weather-temperature .units {
+  position: relative;
+  font-size: 15px;
+  top: -20px;
+}
+
+.weather-temperature .active {
+  color: #132238;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
+.description {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.arrow-down {
+  font-weight: bolder;
+  color: rgb(70, 70, 230);
+}
+.arrow-up {
+  font-weight: bolder;
+  color: rgb(236, 45, 45);
+}
+
+.weather-forecast-day {
+  font-weight: bold;
+  text-align: center;
+}
+
+.frame {
+  background: #fafafa;
+  border: 0.7mm solid #c4c1e0;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+}
+
+.weather-forecast-temperature {
+  text-align: center;
+}
+
+.overmain {
+  text-align: center;
+}
+
+.developer-information {
+  text-align: center;
+}
+
+.forecast-img {
+  display: block;
+  margin: 0 auto;
+  margin-left: 10px;
+}
+
+.frame-forecast {
+  border: 0.7mm solid #c4c1e0;
+  border-radius: 10px;
+  padding: 5px;
+}

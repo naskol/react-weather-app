@@ -76,12 +76,12 @@ export default function Weather() {
               </div>
             </div>
             <div className="frame">
-              <div className="weather-forecast" id="forecast"></div>
+              <div className="weather-forecast"></div>
             </div>
           </div>
           <small className="developer-information">
             <a
-              href="https://github.com/naskol/weather-app-react"
+              href="https://github.com/naskol/react-weather-app"
               target="_blank"
               rel="noreferrer"
             >
