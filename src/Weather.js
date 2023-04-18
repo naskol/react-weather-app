@@ -16,8 +16,7 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
-      icon: response.data.weather[0].icon,
-      iconUrl: "https://openweathermap.org/img/w/0${icon}.png",
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       feelsLike: response.data.main.feels_like,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -72,6 +71,5 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return <p>Loading...</p>;
   }
 }
