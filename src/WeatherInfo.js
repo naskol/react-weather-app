@@ -29,28 +29,13 @@ export default function WeatherInfo(props) {
           </div>
           <hr />
           <div className="row">
-            <div className="col">
-              Feels like: {Math.round(props.data.feelsLike)}°
-            </div>
+            <div className="col">Feels like: {props.data.feelsLike}°</div>
             <div className="col">Wind: {Math.round(props.data.wind)} km/h</div>
             <div className="col text-capitalize">
               Humidity: {props.data.humidity}%
             </div>
           </div>
         </div>
-        <div className="frame">
-          <div className="weather-forecast"></div>
-        </div>
-        <small className="developer-information">
-          <a
-            href="https://github.com/naskol/react-weather-app"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open-source code
-          </a>{" "}
-          <string> by Anastasiia Balan</string>
-        </small>
       </div>
     </>
   );

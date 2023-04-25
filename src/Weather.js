@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 import "./Weather.css";
 
@@ -20,6 +21,7 @@ export default function Weather(props) {
       feelsLike: response.data.main.feels_like,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
+      coordinates: response.data.coord,
     });
   }
 
@@ -65,6 +67,19 @@ export default function Weather(props) {
             </form>
 
             <WeatherInfo data={weatherData} />
+            <div className="frame">
+              <WeatherForecast coordinates={weatherData.coordinates} />
+            </div>
+            <small className="developer-information">
+              <a
+                href="https://github.com/naskol/react-weather-app"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open-source code
+              </a>{" "}
+              <string> by Anastasiia Balan</string>
+            </small>
           </div>
         </div>
       </div>
