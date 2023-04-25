@@ -6,6 +6,7 @@ export default function WeatherForecast(props) {
   let [forecastData, setForecastData] = useState(null);
 
   function handleResponse(response) {
+    console.log(response.data);
     setForecastReady(true);
     setForecastData(response.data);
   }
@@ -17,7 +18,7 @@ export default function WeatherForecast(props) {
           <div className="frame-forecast">
             <div className="weather-forecast-day">Mon</div>
             <img
-              src="https://openweathermap.org/img/wn/${forecastData[0].weather.icon}@2x.png"
+              src={`https://openweathermap.org/img/wn/${forecastData[0].weather.icon}@2x.png`}
               alt=" "
             />
             <div className="weather-forecast-temperature">
@@ -40,8 +41,8 @@ export default function WeatherForecast(props) {
     let latitude = props.coordinates.lat;
     let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
-    axios.get(apiUrl).than(handleResponse);
+    axios.get(apiUrl).then(handleResponse);
 
-    return null;
+    return "Loading Forecast";
   }
 }
