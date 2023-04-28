@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
   let [forecastReady, setForecastReady] = useState(false);
   let [forecastData, setForecastData] = useState(null);
 
+  useEffect(() => {
+    setForecastReady(false);
+  }, [props.coordinates]);
+
   function handleResponse(response) {
-    console.log(response.data);
+    setForecastData(response.data.daily);
     setForecastReady(true);
-    setForecastData(response.data);
   }
 
   if (forecastReady) {
@@ -16,21 +20,27 @@ export default function WeatherForecast(props) {
       <div className="row">
         <div className="col">
           <div className="frame-forecast">
-            <div className="weather-forecast-day">Mon</div>
-            <img
-              src={`https://openweathermap.org/img/wn/${forecastData[0].weather.icon}@2x.png`}
-              alt=" "
-            />
-            <div className="weather-forecast-temperature">
-              <div className="weather-forecast-temperature-min">
-                <span className="arrow-down">↓</span>
-                {Math.round(forecastData[0].temp.min)}°
-              </div>
-              <div className="weather-forecast-temperature-max">
-                <span className="arrow-up">↑</span>
-                {Math.round(forecastData[0].temp.max)}°
-              </div>
-            </div>
+            <WeatherForecastDay data={forecastData[0]} />
+          </div>
+        </div>
+        <div className="col">
+          <div className="frame-forecast">
+            <WeatherForecastDay data={forecastData[1]} />
+          </div>
+        </div>
+        <div className="col">
+          <div className="frame-forecast">
+            <WeatherForecastDay data={forecastData[2]} />
+          </div>
+        </div>
+        <div className="col">
+          <div className="frame-forecast">
+            <WeatherForecastDay data={forecastData[3]} />
+          </div>
+        </div>
+        <div className="col">
+          <div className="frame-forecast">
+            <WeatherForecastDay data={forecastData[4]} />
           </div>
         </div>
       </div>
@@ -39,9 +49,13 @@ export default function WeatherForecast(props) {
     let apiKey = `866a208a73eeff02182218e9441647a1`;
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-
-    axios.get(apiUrl).then(handleResponse);
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios
+      .get(apiUrl)
+      .then(handleResponse)
+      .catch((error) => {
+        console.log(error);
+      });
 
     return "Loading Forecast";
   }

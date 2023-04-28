@@ -78,7 +78,7 @@ export default function Weather(props) {
               >
                 Open-source code
               </a>{" "}
-              <string> by Anastasiia Balan</string>
+              <span> by Anastasiia Balan</span>
             </small>
           </div>
         </div>
